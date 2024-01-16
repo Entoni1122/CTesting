@@ -123,10 +123,11 @@ struct list_item* list_remove_specific(struct list_item** head,struct list_item*
 
 void printList(struct int_item* head) 
 {
-    while (head != NULL) 
+    struct int_item* heads = head;
+    while(heads != NULL) 
     {
-        printf("List Value : %d\n", head->value);
-        head = head->list_item.next;
+        printf("List Value : %d\n", heads->value);
+        heads = heads->list_item.next;
     }
 }
 
@@ -149,7 +150,7 @@ struct list_item* listPop(struct list_item** head)
 
 void reverse_list(struct list_item** _head)
 {
-    struct  list_item* current = *_head;
+    struct  list_item* current = (*_head);
     struct  list_item* next = NULL;
     struct  list_item* prev = NULL;
 
@@ -189,22 +190,21 @@ int main(int argc, char** argv)
 
     printf("-----------List-----------------\n");
 
-    printList(head);
+    printList((struct int_item *)head);
 
     printf("-----------Remove at specific-----------------\n");
 
     list_remove_specific(&head,get_list(item3));
-    printList(head);
+    printList((struct int_item *)head);
     
     printf("-----------Remove at index-----------------\n");
 
     list_remove_at(&head,2);
-    printList(head);
+    printList((struct int_item *)head);
 
-    printf("-----------Reverse--------------------\n");
-
-    reverse_list(&head);
-    printList(head);
+    //printf("-----------Reverse--------------------\n");
+    // reverse_list(&head);
+    // printList((struct int_item *)head);
 
     return 0;
 }
