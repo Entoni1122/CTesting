@@ -239,7 +239,6 @@ int main(int argc, char** argv)
     list_append(&head,get_list(item2));
     printList(head);
 
-
     printf("---------------Insert after and before------------------\n");
 
     //insert_after_item(&head,get_list(item2),get_list(item3));
