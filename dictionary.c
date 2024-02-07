@@ -58,7 +58,7 @@ int main(int argc, char **argv)
 {
     struct aiv_dictionary myset;
     
-    aiv_dictionary_insert(&myset,"porcido","dio");
+    aiv_dictionary_insert(&myset,"Prova","Provissima");
 
     return 0;
 }
